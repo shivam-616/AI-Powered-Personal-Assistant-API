@@ -14,8 +14,8 @@ public class PA_controller {
         this.chatClient = chatClient;
     }
 
-    @GetMapping("/{question}")
-    public String chat(@PathVariable String question) {
-    return chatClient.prompt().user(question).call().content();
-    }
+        @GetMapping("/chat")
+        public String chat(@RequestParam String question) {
+        return chatClient.prompt().user(question).call().content();
+        }
 }
